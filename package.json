@@ -1,0 +1,22 @@
+{
+  "name": "clear-energy",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "test:shared": "jest packages/shared --passWithNoTests"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.4",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@clear-energy/shared/(.*)$": "<rootDir>/packages/shared/src/$1"
+    }
+  }
+}
